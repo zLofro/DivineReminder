@@ -1,5 +1,3 @@
-# Fabric Mod Template
+# LowHealhJesusScreamer
 
-Basic mod template for Vermillion Productions' modding environment.
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Fabric 1.18.2 Minecraft client-side mod that puts a flashing image of Jesus Christ on the screeen with bell sounds when a player has low health.
