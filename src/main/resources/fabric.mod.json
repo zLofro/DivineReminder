@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "jesusscreamer",
   "version": "${version}",
 
-  "name": "FabricModTemplate",
-  "description": "Basic mod template for Vermillion Productions modding environment.",
+  "name": "LowHealthJesusScreamer",
+  "description": "Fabric 1.18.2 Minecraft client-side mod that puts a flashing image of Jesus Christ on the screen with bell sounds when a player has low health.",
   "authors": [
-    "zLofro"
+    "Lofro"
   ],
   "contact": {
-    "sources": "https://github.com/VermillionProductions/FabricModTemplate"
+    "sources": "https://github.com/zLofro/LowHealthJesusScreamer"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/jesusscreamer/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "vermillion.productions.Main"
+      "me.lofro.jesusScreamer.client.ModClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "jesusscreamer.mixins.json"
   ],
 
   "depends": {
