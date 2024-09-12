@@ -15,6 +15,9 @@ import net.minecraft.util.Identifier;
 
 import javax.annotation.Nullable;
 
+/**
+ * @author <a href="https://github.com/NexxusYT">Nex</a>, <a href="https://github.com/zLofro">Lofro</a>
+ */
 public class JesusMemeHud implements HudRenderCallback {
 
     // The time for each image phase duration.
