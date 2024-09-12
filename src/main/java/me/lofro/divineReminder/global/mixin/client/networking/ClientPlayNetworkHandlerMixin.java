@@ -1,5 +1,6 @@
 package me.lofro.divineReminder.global.mixin.client.networking;
 
+import me.lofro.divineReminder.client.ModClient;
 import me.lofro.divineReminder.client.render.JesusMemeHud;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -24,9 +25,12 @@ public class ClientPlayNetworkHandlerMixin {
         if (clientPlayer != null) {
             var oldHealth = clientPlayer.getHealth();
 
+            // The times the Jesus meme image appears per trigger.
+            var phases = ModClient.getInstance().config().phases();
+
             // Makes sure the animation is not already being played and checks if the life is decreasing and less than a heart.
             if (newHealth <= 2 && !(JesusMemeHud.getTickDuration() > 0) && newHealth < oldHealth) {
-                JesusMemeHud.getInstance().tickDuration(5 * JesusMemeHud.PHASE_DURATION);
+                JesusMemeHud.getInstance().tickDuration(phases * JesusMemeHud.PHASE_DURATION);
             }
         }
     }
