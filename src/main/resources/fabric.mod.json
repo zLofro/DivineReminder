@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "jesusscreamer",
+  "id": "divinereminder",
   "version": "${version}",
 
-  "name": "LowHealthJesusScreamer",
+  "name": "DivineReminder",
   "description": "Fabric 1.18.2 Minecraft client-side mod that puts a flashing image of Jesus Christ on the screen with bell sounds when a player has low health.",
   "authors": [
     "Lofro"
@@ -13,12 +13,15 @@
   },
 
   "license": "MIT",
-  "icon": "assets/jesusscreamer/icon.png",
+  "icon": "assets/divinereminder/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.lofro.jesusScreamer.client.ModClient"
+      "me.lofro.divineReminder.client.ModClient"
+    ],
+    "client": [
+      "me.lofro.divineReminder.client.ModClient"
     ]
   },
   "mixins": [

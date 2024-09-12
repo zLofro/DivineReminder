@@ -1,0 +1,7 @@
+{
+  "ambient.clockbell.sound": {
+    "sounds": [
+      "divinereminder:ambient_clockbell_sound"
+    ]
+  }
+}

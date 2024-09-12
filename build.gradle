@@ -14,7 +14,6 @@ group = project.maven_group
 
 repositories {
 	mavenCentral()
-	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 }
 
 dependencies {
@@ -29,8 +28,6 @@ dependencies {
 
 	testCompileOnly 'org.projectlombok:lombok:1.18.26'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
-
-	modImplementation include ('software.bernie.geckolib:geckolib-fabric-1.18:3.0.56')
 }
 
 processResources {

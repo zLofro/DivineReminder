@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.lofro.jesusScreamer.global.mixin",
+  "package": "me.lofro.divineReminder.global.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
@@ -9,6 +9,6 @@
     "defaultRequire": 1
   },
   "client": [
-    "client.entity.ClientPlayerEntityMixin"
+    "client.networking.ClientPlayNetworkHandlerMixin"
   ]
 }
