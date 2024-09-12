@@ -2,6 +2,8 @@ package me.lofro.divineReminder.client.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import lombok.Getter;
+import lombok.Setter;
+import me.lofro.divineReminder.client.ModClient;
 import me.lofro.divineReminder.global.soundevents.ModSoundEvents;
 import me.lofro.divineReminder.global.utils.ModConstants;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
@@ -21,7 +23,7 @@ import javax.annotation.Nullable;
 public class JesusMemeHud implements HudRenderCallback {
 
     // The time for each image phase duration.
-    public static final float PHASE_DURATION = 3.0f * 20f;
+    public static final int PHASE_DURATION = 20;
 
     // This class instance.
     @Getter
@@ -29,9 +31,10 @@ public class JesusMemeHud implements HudRenderCallback {
     // The Jesus meme image reference.
     private static final Identifier CHRIST_IMAGE = new Identifier(ModConstants.MOD_ID, "textures/sprites/jesus.png");
 
-    @Getter
-    private static float tickDuration = -1;
-    private static float soundTicker = -1;
+    @Getter @Setter
+    private static int tickDuration = -1;
+    @Getter @Setter
+    private static int soundTicker = -1;
 
     /**
      * Play the Jesus Christ Meme sound.
@@ -46,7 +49,7 @@ public class JesusMemeHud implements HudRenderCallback {
         clientPlayer.playSound(jesusSound, 1.0f, 1.0f);
     }
 
-    public void tickDuration(float tickDuration) {
+    public void tickDuration(int tickDuration) {
         JesusMemeHud.tickDuration = tickDuration;
         soundTicker = -1;
     }
@@ -84,9 +87,6 @@ public class JesusMemeHud implements HudRenderCallback {
         DrawableHelper.drawTexture(matrixStack, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
 
         RenderSystem.disableBlend();
-
-        tickDuration -= tickDelta;
-        soundTicker -= tickDelta;
     }
 
 }

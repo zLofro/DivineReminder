@@ -23,13 +23,14 @@ public class ClientPlayNetworkHandlerMixin {
         var clientPlayer = client.player;
 
         if (clientPlayer != null) {
+
             var oldHealth = clientPlayer.getHealth();
 
             // The times the Jesus meme image appears per trigger.
             var phases = ModClient.getInstance().config().phases();
 
             // Makes sure the animation is not already being played and checks if the life is decreasing and less than a heart.
-            if (newHealth <= 2 && !(JesusMemeHud.getTickDuration() > 0) && newHealth < oldHealth) {
+            if (newHealth <= 2 && !(JesusMemeHud.getTickDuration() > 0) && newHealth <= oldHealth) {
                 JesusMemeHud.getInstance().tickDuration(phases * JesusMemeHud.PHASE_DURATION);
             }
         }

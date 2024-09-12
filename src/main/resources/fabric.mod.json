@@ -17,9 +17,6 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "me.lofro.divineReminder.client.ModClient"
-    ],
     "client": [
       "me.lofro.divineReminder.client.ModClient"
     ]

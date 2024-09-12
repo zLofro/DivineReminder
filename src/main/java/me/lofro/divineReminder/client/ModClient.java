@@ -7,12 +7,11 @@ import me.lofro.divineReminder.global.utils.ModConstants;
 import me.lofro.divineReminder.global.utils.config.DefaultConfig;
 import me.lofro.divineReminder.global.utils.config.SimpleConfig;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ModClient implements ClientModInitializer, ModInitializer {
+public class ModClient implements ClientModInitializer {
 
     private static @Getter ModClient instance;
 
@@ -35,13 +34,10 @@ public class ModClient implements ClientModInitializer, ModInitializer {
                 config.getOrDefault("phases", 5)
         );
 
+        ModSoundEvents.register();
+
         // Registers the Jesus meme hud callback.
         HudRenderCallback.EVENT.register(JesusMemeHud.getInstance());
-    }
-
-    @Override
-    public void onInitialize() {
-        ModSoundEvents.register();
     }
 
 }
