@@ -16,6 +16,7 @@ public class ModClient implements ClientModInitializer, ModInitializer {
 
     @Override
     public void onInitializeClient() {
+        // Registers the Jesus meme hud callback.
         HudRenderCallback.EVENT.register(JesusMemeHud.getInstance());
     }
 

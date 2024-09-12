@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPlayNetworkHandler.class)
 public class ClientPlayNetworkHandlerMixin {
 
+    // Triggers the Jesus meme effect when the client health updates to less than 1 heart, but only if the health is decreasing.
     @Inject(method = "onHealthUpdate", at = @At("HEAD"))
     private void modifyHealthUpdate(HealthUpdateS2CPacket packet, CallbackInfo ci) {
         MinecraftClient client = MinecraftClient.getInstance();
@@ -23,6 +24,7 @@ public class ClientPlayNetworkHandlerMixin {
         if (clientPlayer != null) {
             var oldHealth = clientPlayer.getHealth();
 
+            // Makes sure the animation is not already being played and checks if the life is decreasing and less than a heart.
             if (newHealth <= 2 && !(JesusMemeHud.getTickDuration() > 0) && newHealth < oldHealth) {
                 JesusMemeHud.getInstance().tickDuration(5 * JesusMemeHud.PHASE_DURATION);
             }

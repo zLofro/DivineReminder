@@ -17,17 +17,25 @@ import javax.annotation.Nullable;
 
 public class JesusMemeHud implements HudRenderCallback {
 
+    // The time for each image phase duration.
     public static final float PHASE_DURATION = 3.0f * 20f;
 
+    // This class instance.
     @Getter
     public static final JesusMemeHud instance = new JesusMemeHud();
-
+    // The Jesus meme image reference.
     private static final Identifier CHRIST_IMAGE = new Identifier(ModConstants.MOD_ID, "textures/sprites/jesus.png");
 
     @Getter
     private static float tickDuration = -1;
     private static float soundTicker = -1;
 
+    /**
+     * Play the Jesus Christ Meme sound.
+     *
+     * @param minecraftClient The Minecraft client.
+     * @param jesusSound The Jesus Christ Meme sound.
+     */
     private static void playSound(MinecraftClient minecraftClient, SoundEvent jesusSound) {
         final @Nullable ClientPlayerEntity clientPlayer = minecraftClient.player;
         if (clientPlayer == null) return;
@@ -40,6 +48,12 @@ public class JesusMemeHud implements HudRenderCallback {
         soundTicker = -1;
     }
 
+    /**
+     * Renders the Jesus Christ Meme HUD.
+     *
+     * @param matrixStack The matrix stack.
+     * @param tickDelta   The tick delta.
+     */
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
         if (tickDuration <= 0) return;
